@@ -16,13 +16,14 @@ export const generateJWT = (usuario) => {
   return new Promise((resolve, reject) => {
     // Crea un objeto 'payload' que contiene la información del usuario a incluir en el token
     const payload = {
-      usuario,
-      // Puedes agregar más información del usuario aquí si es necesario
+      usuario
+      
     };
 
     // Genera el token JWT con el 'payload', la clave secreta y un tiempo de expiración de 1 hora
-    jwt.sign(payload, process.env.SECRET_KEY, {
+    jwt.sign({usuario: usuario}, process.env.SECRET_KEY, {
       expiresIn: '1h',
+      
     }, (err, token) => {
       if (err) {
         // Si ocurre un error al generar el token, rechaza la promesa con un mensaje de error

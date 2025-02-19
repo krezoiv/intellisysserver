@@ -23,7 +23,7 @@ export const getListWorkPosition = async (req, res) => {
     } catch (error) {
         // En caso de error, responder con un mensaje de error y el mensaje de error original.
         res.status(500).send("Error al obtener Cargo " + error.message);
-        console.log(error);
+       
     }
 }
 

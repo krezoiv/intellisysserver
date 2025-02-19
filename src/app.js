@@ -17,6 +17,9 @@ import departmentRoute from './routes/locations/departments.routes';
 import commissionData from './routes/commissions/commissionData.routes';
 import dataCommissionConcept from './routes/commissions/dataCommissionConcept.routes';
 import dataCommissionDetail from './routes/commissions/dataCommissionDetail.routes';
+import commissionType from './routes/commissions/commissionType.routes';
+import months from './routes/dates/months.routes';
+
 
 //settings
 app.set('port', config.port);
@@ -41,6 +44,7 @@ app.use(departmentRoute);
 app.use(commissionData);
 app.use(dataCommissionConcept);
 app.use(dataCommissionDetail);
-
+app.use(commissionType);
+app.use(months);
 
 export default app;

@@ -97,7 +97,7 @@ export const getUsers = async (req, res) => {
 
   } catch (error) {
     res.status(500).send("Error al obtener lista de usuarios " + error.message);
-    console.error("Error al obtener lista de usuarios " + error.message);
+    //console.error("Error al obtener lista de usuarios " + error.message);
   }
 };
 
@@ -179,7 +179,7 @@ export const resetUserPassword = async (req, res) => {
     // Enviar la nueva contraseña al usuario (por ejemplo, a través de correo electrónico)
     // Aquí debes implementar el código para enviar la contraseña al usuario.
 
-    res.json({ message: 'Contraseña reseteada con éxito' , newPassword});
+    res.json({ message: 'Contraseña reseteada con éxito' , newPassword , idUser});
   } catch (error) {
     // Manejo de errores
     console.error("Error al resetear la contraseña:", error);

@@ -10,7 +10,7 @@ const dbSettings = {
   user: "sa",// Nombre de usuario de la base de datos
   password: "krezoiv@1984", // Contraseña de la base de datos
   //server: "192.168.1.63",     // Servidor de la base de datos casa
-  server: "192.168.1.3",     // Servidor de la base de datos oficina
+  server: "10.10.10.200",     // Servidor de la base de datos oficina
   database: "IntelliSys_DB", 
   port: 1433,// Nombre de la base de datos
   options: {
@@ -32,3 +32,4 @@ export async function getConnection() {
 
 // Exportar el módulo de sql para su uso en otras partes de la aplicación
 export { sql };
+//aumento de velocidad 353274

@@ -39,19 +39,22 @@ export const login = async (req, res) => {
         // La contraseña es válida
 
         // Genera un token JWT con los datos del usuario (puedes personalizar los datos incluidos)
-        const token = jwt.sign({ userName: userName }, process.env.SECRET_KEY, {
+        const token = jwt.sign({ usuario: userName }, process.env.SECRET_KEY, {
           expiresIn: "1h",
         });
 
         // Responde con el token JWT y un mensaje de inicio de sesión exitoso
         res.json({
           userName,
-          message: "Inicio de sesión exitoso",
+          message: "Inicio de sesión exitoso..",
           token: token,
         });
+
+       
+
       } else {
         // Responde con un código de estado 401 (No autorizado)
-        res.status(401).json({ error: "Credenciales incorrectas" + token });
+        res.status(401).json({ error: "Credenciales incorrectas" });
       }
     } else {
       // No se encontró un usuario con el nombre de usuario proporcionado
@@ -68,7 +71,6 @@ export const login = async (req, res) => {
     res.status(500).json({ error: "Error en el inicio de sesión" });
   }
 };
-
 /**
  * Renueva un token de autenticación para un usuario autenticado.
  * @param {Request} req - Objeto de solicitud HTTP que debe contener la información del usuario autenticado en `req.usuario`.
@@ -84,9 +86,11 @@ export const renewToken = async (req, res = response) => {
     const token = await generateJWT(usuario);
 
     // Enviar una respuesta JSON con el nuevo token
+
     res.json({
       ok: true,
-      token
+      token,
+    
     });
   } catch (error) {
     // Manejar errores de generación de token

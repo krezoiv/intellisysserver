@@ -8,7 +8,7 @@ class CommissionDataFieldsMappings {
             batchDataDate : sql.Date,
             idMonth : sql.Int,
             totalAmount : sql.Decimal(18,2),
-            idUser : sql.Int
+            userName : sql.VarChar(50)
         };
     }
 

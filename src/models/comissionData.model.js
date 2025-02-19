@@ -4,14 +4,14 @@ class CommissionDataModel {
         batchDataDate,
         idMonth,
         totalAmount,
-        idUser
+        userName
     }){
         Object.assign(this, {
             idDataBatch,
             batchDataDate,
             idMonth,
             totalAmount,
-            idUser
+            userName
         });
     }
 }

@@ -1,11 +1,13 @@
 class DataCommissionConceptModel {
     constructor({
         idDataCommissionConcept,
-        concept
+        concept,
+        idCommissionType
     }){
         Object.assign(this, {
             idDataCommissionConcept,
-            concept
+            concept,
+            idCommissionType
         });
     }
 }

@@ -41,3 +41,36 @@ export const newCommissionData = async (req, res) => {
         }
     }
 };
+
+
+export const getLastDataBatchTotalAmount = async (req, res) => {
+   
+    try {
+        const pool = await getConnection();
+        const result = await pool.request()
+        .query(commissionData_queries.getLastDataBatchAmount);
+
+        res.json(result.recordset);
+    } catch (error) {
+        console.error(err);
+        res.status(500).json({
+            message: 'Error al obtner detalle'
+        })
+    }
+}
+
+export const getTotalValueByCommisionType = async (req, res) => {
+   
+    try {
+        const pool = await getConnection();
+        const result = await pool.request()
+        .query(commissionData_queries.getTotalValueByCommissionType);
+
+        res.json(result.recordset);
+    } catch (error) {
+        console.error(err);
+        res.status(500).json({
+            message: 'Error al obtner detalle'
+        })
+    }
+}
