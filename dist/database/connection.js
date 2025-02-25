@@ -26,7 +26,7 @@ var dbSettings = {
   password: "krezoiv@1984",
   // Contraseña de la base de datos
   //server: "192.168.1.63",     // Servidor de la base de datos casa
-  server: "10.10.1.200",
+  server: "192.168.1.20",
   // Servidor de la base de datos oficina
   database: "IntelliSys_DB",
   port: 1433,
