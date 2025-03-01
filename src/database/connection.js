@@ -19,6 +19,8 @@ const dbSettings = {
   },
 };
 
+//production 01/03/2025
+
 // Función para obtener una conexión a la base de datos
 export async function getConnection() {
   try {
